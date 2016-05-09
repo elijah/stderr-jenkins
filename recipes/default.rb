@@ -10,4 +10,7 @@ letsencrypt_selfsigned 'jenkins.stderr.org' do
   key     '/etc/ssl/jenkins.stderr.org.key'
 end
 
+nginx_site 'jenkins' do
+  action :enabled
+end
 
