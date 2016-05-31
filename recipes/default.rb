@@ -10,7 +10,11 @@ letsencrypt_selfsigned 'jenkins.stderr.org' do
   key     '/etc/ssl/jenkins.stderr.org.key'
 end
 
-nginx_site 'jenkins' do
+nginx_proxy 'jenkins' do
   action :enabled
+  url 'http://127.0.0.1:8080'
+  ssl_key 'jenkins.stderr.org'
+  ssl_key_path '/etc/ssl/jenkins.stderr.org.key'
+  ssl_certificate_path '/etc/ssl/jenkins.stderr.org.crt'
 end
 
