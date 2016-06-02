@@ -5,3 +5,6 @@ license 'all_rights'
 description 'Installs/Configures stderr-jenkins'
 long_description 'Installs/Configures stderr-jenkins'
 version '0.1.0'
+
+depends 'letsencrypt', '~> 0.1.7'
+depends 'nginx-proxy'
